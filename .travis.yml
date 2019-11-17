@@ -9,3 +9,18 @@ before_install:
 
 script:
   - docker run  -e CI=true eppifoss/eureka npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-west-2"
+  app: "eureka"
+  env: "eureka-env"
+  bucket_name: "elasticbeanstalk-us-west-2-476578251364"
+  bucket_path: "eureka"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"    
+
+
