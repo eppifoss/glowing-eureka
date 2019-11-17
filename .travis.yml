@@ -11,11 +11,12 @@ script:
   - docker run  -e CI=true eppifoss/eureka npm run test
 
 deploy:
+  edge: true
   provider: elasticbeanstalk
   region: "us-west-2"
   app: "eureka"
   env: "eureka-env"
-  bucket_name: "eureka-bucket-aws"
+  bucket_name: "elasticbeanstalk-us-west-2-476578251364"
   bucket_path: "eureka"
   on:
     branch: master
