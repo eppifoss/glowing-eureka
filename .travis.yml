@@ -16,7 +16,7 @@ deploy:
   region: "us-west-2"
   app: "eureka"
   env: "eureka-env"
-  bucket_name: "arn:aws:s3:::elasticbeanstalk-us-west-2-476578251364"
+  bucket_name: "elasticbeanstalk-us-west-2-476578251364"
   bucket_path: "eureka"
   on:
     branch: master
